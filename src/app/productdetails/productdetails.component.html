@@ -1,0 +1,77 @@
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col cartcol">
+      <span routerLink="/viewcart" class="badge badge-primary"> <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>{{Cartcount}}</span>
+  </div>
+  
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-lg-8" >
+
+
+      <div class="card flex-row flex-wrap">
+        <div class="card-header border-0">
+          <img src="{{Details.imageurl}}" width="200px" alt="">
+        </div>
+        <div class="card-block px-2">
+          <h4 class="card-title">{{Details.name}}</h4>
+          <p class="card-text">{{Details.price}}</p>
+          <p class="card-text">{{Details.description}}</p>
+        </div>
+        
+        <div class="card-block mt-5 px-2">
+            <button (click)="AddtoCart(Details)" style="float: right" class="btn btn-primary mb-2 ">AddtoCart</button>
+
+        </div>
+      </div>
+          <!-- <div class="w-100"></div>
+          <div class="card-footer w-100 text-muted">
+              FOOTER
+          </div> -->
+      <!-- </div> -->
+
+
+
+
+
+
+
+
+<!-- 
+    <div class="card">
+      <img class="card-img-left" src="{{Details.imageurl}}" width="250px" height="auto" alt="">
+      <div class="card-body">
+        <h4 class="card-title">{{Details.name}}</h4>
+        <p class="card-text">{{Details.price}}</p>
+        <p class="card-text">{{Details.description}}</p> -->
+
+      
+      <!-- <button (click)="AddtoCart(Details)" class="btn btn-primary">AddtoCart</button>
+    
+      </div>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-lg4">
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+</div>

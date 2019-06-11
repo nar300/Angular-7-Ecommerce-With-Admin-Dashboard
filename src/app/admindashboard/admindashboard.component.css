@@ -1,0 +1,8 @@
+.side-menu{
+    -webkit-box-shadow: 5px 2px 5px 0px rgba(186,173,186,1);
+    -moz-box-shadow: 5px 2px 5px 0px rgba(186,173,186,1);
+    box-shadow: 5px 2px 5px 0px rgba(186,173,186,1);
+
+height: 80vh;
+background-color: white;
+}

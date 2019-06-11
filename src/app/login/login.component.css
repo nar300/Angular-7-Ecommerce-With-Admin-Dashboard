@@ -1,0 +1,21 @@
+.main-col{
+    border:solid 1px ;
+    border-radius: 10px;
+    border-color:rgb(79, 204, 106);
+    /* height:360px; */
+     margin-top:80px;
+  
+    padding: 50px;
+}
+.register-text{
+    margin-bottom: 30px;
+    text-align: center;
+    color:black;
+}
+.btn-primary{
+    background-color:rgb(79, 204, 106);
+    border: transparent;
+}
+.btn-link-info{
+    float: right;
+}

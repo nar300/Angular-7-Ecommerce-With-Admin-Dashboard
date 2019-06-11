@@ -1,0 +1,66 @@
+
+
+<div class="row dash1">
+  <div class="col">
+
+      <div class="card card-recatngle">
+          <div  class="card-body">
+            <h4 class="card-title">Total Categories</h4>
+            <p class="card-text">{{CategoryList.length}}</p>
+          </div>
+        </div>
+  </div>
+  <div class="col">
+      <div class="card card-recatngle">
+          <div class="card-body">
+            <h4 class="card-title">Total Products</h4>
+            <p class="card-text">{{ProductList.length}}</p>
+          </div>
+        </div>
+  </div>
+  <div class="col">
+      <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Total Users</h4>
+            <p class="card-text">{{userlist.length}}</p>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <canvas id="line" class="chart chart-line" chart-data="data"
+        chart-labels="labels" chart-series="series" chart-options="options"
+        chart-dataset-override="datasetOverride" chart-click="onClick">
+        </canvas>
+
+
+    </div>
+
+
+
+  </div>
+</div>
+<div class="container">
+    <table class="table table-stripped">
+    <thead>
+      <tr>
+       
+        <th>Username</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userlist" >
+        <td>{{item.email}}</td>
+        <td>{{item.password}}</td>
+        
+      
+        
+      </tr>
+    </tbody>
+    </table>
+  </div>

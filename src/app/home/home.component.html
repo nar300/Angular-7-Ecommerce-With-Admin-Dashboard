@@ -1,0 +1,57 @@
+
+ <!-- <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col cartcol">
+        <span class="badge badge-primary"> <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>{{Cartcount}}</span>
+    </div>
+</div> -->
+
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-lg-6"></div>
+      <div class="col-lg-6 "> <input #sear1 (keyup)="search(sear1)" type="text" name="text" class="form-control" placeholder="search product"> </div>
+    <div class="clearfix"></div>
+    </div>
+
+<div class="conatiner mt-5">
+   
+
+  <div class="row">
+    <div class="col-sm-4  " >
+      <h6 class="cat ml-3">Category</h6>
+      <hr>
+     <ul class="list-group ml-3" >
+       <div (click)="getallproducts()" class="list-group-item">
+        All
+       </div>
+       <div *ngFor ="let cat of CategoryList" (click)="filterbyCategory(cat.CategoryId)" class="list-group-item">{{cat.categoryname}}</div>
+     </ul>
+     
+    </div>
+
+    <div class="col-lg-8" >
+    <div class="row">
+      <div class="col-sm-4 mb-3" *ngFor="let item of filteredList | paginate: { itemsPerPage: 5, currentPage: p }" >
+
+        <div class="card" >
+          <img class="card-img-top" src="{{item.imageurl}}" alt="">
+          <div class="card-body" >
+            <h4 class="card-title">{{item.name}}</h4>
+            <p class="card-text">{{item.description}}</p>
+            <p class="card-text">Price :{{item.price}}</p>
+            <button routerLink="/productdetails/{{item.productId}}" class="btn btn-primary">Details </button>
+            <!-- <button (click)="onSubmit(item)"  class="btn btn-primary">AddtoCart </button> -->
+      </div>
+    </div>
+       </div>
+      
+    </div>
+    <div class="row">
+      <div class="col">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

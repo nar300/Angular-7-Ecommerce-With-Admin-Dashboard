@@ -1,0 +1,75 @@
+
+
+<div class="container">
+    <div class="form-group">
+      <label for="productImageurl">Product Imageurl</label>
+      <input  name="productImageurl" #productImageurl (change)="uploadimage(productImageurl)"   type="file" class="form-control" required id="productImageurl" placeholder="productImageurl">
+      <!-- <div *ngIf="!productImageurl.valid && productImageurl.touched" class="alert alert-danger">This field is required</div> -->
+    </div>
+  </div>
+  
+  
+  
+  <div class="container">
+    <form #upproduct="ngForm" (ngSubmit)="onSubmit(upproduct)" encType="multipart/form-data"  >
+  
+      <div class="form-group">
+        <label for="name">Product </label>
+        <input [(ngModel)]="pname" #name="ngModel" type="text" name="name" id="name" required class="form-control" placeholder="Product Name" />
+     <div *ngIf="!name.valid && name.touched" class="alert alert-danger">Product name required</div>
+      </div>
+      <div class="form-group">
+        <label for="price">Product Price</label>
+        <input [(ngModel)]="pprice" #price="ngModel"  type="text" name="price" id="price" class="form-control" placeholder="Product price" />
+        <div *ngIf="!price.valid && price.touched" class="alert alert-danger">Product price required</div>
+      </div>
+      <div class="form-group">
+        <label for="description">Product description</label>
+        <input [(ngModel)]="pdescription" #description="ngModel" type="text" name="description" id="description" class="form-control" placeholder="Product description" />
+        <div *ngIf="!description.valid && description.touched" class="alert alert-danger">Product description required</div>
+      </div>
+       <!-- <div class="form-group">
+        <label for="imageurl">Product imageurl</label>
+        <input ngModel #imageurl="ngModel" type="file" name="imageurl" id="imageurl" class="form-control"  />
+       
+      </div>  -->
+      <div class="form-group">
+        <label for="stock">Product stock</label>
+        <input [(ngModel)]="pstock" #stock="ngModel"  type="text" name="stock" id="stock" class="form-control" placeholder="Product stock" />
+        <div *ngIf="!stock.valid && stock.touched" class="alert alert-danger">Product stock required</div>
+      </div>
+      <div class="form-group">
+        <label for="size">Product size</label>
+        <input [(ngModel)]="psize" #size="ngModel"  type="text" name="size" id="size" class="form-control" placeholder="Product size" />
+        <div *ngIf="!size.valid && size.touched" class="alert alert-danger">Product size required</div>
+      </div>
+      <div class="form-group">
+        <label for="color">Product color</label>
+        <input [(ngModel)]="pcolor" #color="ngModel"  type="text" name="color" id="color" class="form-control" placeholder="Product color" />
+        <div *ngIf="!color.valid && color.touched" class="alert alert-danger">Product color required</div>
+      </div>
+      <div class="form-group">
+        <label for="discount">Product discount</label>
+        <input [(ngModel)]="pdiscount" #discount="ngModel"  type="text" name="discount" id="discount" class="form-control" placeholder="Product discount" />
+        <div *ngIf="!discount.valid && discount.touched" class="alert alert-danger">Product discount required</div>
+      </div>
+     
+      <!-- <div class="form-group">
+        <label for="categoryId">CategoryId</label>¬
+        <input ngModel #categoryId="ngModel"  type="text" name="categoryId" id="categoryId" class="form-control" placeholder="Product " />
+        <div *ngIf="!categoryId.valid && categoryId.touched" class="alert alert-danger">Product categoryId required</div>
+      </div> -->
+  
+        <div class="form-group">
+              <label for="productCategory">product Category</label>
+              <select [(ngModel)]="pCategoryId" name="CategoryId" #productCategory  required class="form-control">
+                <option *ngFor="let cat of categorylist" [value]="cat.CategoryId" >{{cat.categoryname}}</option>
+                <div *ngIf="!productCategory.valid && productCategory.touched" class="alert alert-danger">This field is required</div>
+              </select>         
+            </div> 
+      <button [disabled]="upproduct.invalid" class="btn btn-primary">Update Product</button>
+   </form>
+  
+
+
+  </div>

@@ -1,0 +1,17 @@
+.main-col{
+    border:solid 1px ;
+    border-radius: 10px;
+    border-color:rgb(79, 204, 106);
+   
+    margin-top: 120px;
+    padding:50px;
+}
+.register-text{
+    margin-bottom: 30px;
+    text-align: center;
+    color:black;
+}
+.btn-primary{
+    background-color:rgb(79, 204, 106);
+    border: transparent;
+}

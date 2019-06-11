@@ -1,0 +1,32 @@
+
+<div class="container">
+  <table class="table table-stripped">
+   
+     <tr>
+      
+       <th></th>
+       <th>Product Name</th>
+       <th>Product Price</th>
+       <th>Quantity</th>
+     </tr>
+  
+     <tbody>
+       <tr *ngFor="let cat of CartList ; index as i; ">
+         <td>{{i + 1}}</td>
+         <td>{{cat.productname}}</td>
+         <td>{{cat.productprice}}</td>
+         <td>{{cat.quantity}}</td>
+       </tr>
+       <tr style="background-color:gainsboro;">
+         <td>Total</td>
+         <td></td>
+         <td>{{totalPrice}}</td>
+         <td></td>
+       </tr>
+     </tbody>
+
+   
+  </table>
+  <!-- <button (click)="onClick(payment)"  class="btn btn-primary">Pay Now</button> -->
+  <a (click)="onPay(totalPrice)" class="btn btn-success">Pay now <ngx-paypal [config]="payPalConfig"></ngx-paypal>  </a>
+  </div>

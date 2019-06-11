@@ -1,0 +1,73 @@
+<div class="container">
+
+  <div class="row">
+    <!-- <div class="col-lg-4"></div> -->
+    <div class="col-lg-4 main-col mx-auto">
+
+        <form #register="ngForm" (ngSubmit)="onSubmit(register)">
+
+                <h4 class="register-text ">Register</h4><br>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                </div>
+                <input ngModel name="email" #email="ngModel" type="email" class="form-control" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" maxlength="50" placeholder="email" aria-label="please enter email" >
+             
+              </div>
+              <div *ngIf="email.errors && email.touched" class="alert alert-danger">
+                  <div *ngIf="email.errors.required" class="div">
+                      Email required
+                    </div>
+                    <div *ngIf="email.errors.pattern" class="div">
+                      please enter a valid email
+                    </div>
+
+
+
+
+              </div>
+<br>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input ngModel name="password" #password="ngModel" type="password" class="form-control"  id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z0-9\S]{6,}$" minlength="6" required placeholder="Enter password">
+                  
+                </div>
+                <small  class="form-text text-muted">
+                    Password must contain minimum 6  alphanumeric characters,  at least one upper character, one lower character and a number.
+  
+                </small>
+                <div *ngIf="password.touched && password.errors" class="alert alert-danger">
+                  
+                  
+                    <div *ngIf="password.errors.required" class="div">
+                        password required
+                      </div>
+                      <div *ngIf="password.errors.minlength" class="div">
+                          password must be at least 6 charectors long
+                        </div>
+                      <div *ngIf="password.errors.pattern" class="div">
+                        password must contain  alphanumeric characters,  at least one upper character, one lower character and a number.
+                      </div>
+                
+                
+                
+                
+                </div>
+<br>
+
+                <button [disabled]="register.invalid"  class="btn btn-block btn-primary">Register</button>
+              
+
+
+
+          </form>
+
+
+<div *ngIf="isError" class="alert alert-danger">{{errorMessage}}</div>
+    </div>
+    <!-- <div class="col-lg-4"></div> -->
+  </div>
+</div>
