@@ -5,6 +5,11 @@
     align-items: center;
     justify-content : space-between;
 }
+.topside:hover{
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+}
 /* .icon1{
     border-radius: 50px;
     border: 1px solid grey;

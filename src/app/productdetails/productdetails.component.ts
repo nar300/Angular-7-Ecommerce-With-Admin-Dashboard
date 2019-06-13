@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../Models/Product';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-productdetails',
@@ -10,11 +11,18 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./productdetails.component.css']
 })
 export class ProductdetailsComponent implements OnInit {
+ 
   id=0;
   Details:Product ={} ;      
   Cart:any[]=[];   
   Cartcount=0;                                                                     
-  constructor(private router:ActivatedRoute,private productservice:ProductService,private cookieService: CookieService) { }
+  constructor(
+    private router:ActivatedRoute,
+    private productservice:ProductService,
+    private cookieService: CookieService,
+    
+    
+    ) { }
 
 
   ngOnInit() {
@@ -95,4 +103,6 @@ export class ProductdetailsComponent implements OnInit {
 
       
   }
+
+  
 }

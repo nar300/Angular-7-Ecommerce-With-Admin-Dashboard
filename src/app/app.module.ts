@@ -44,6 +44,7 @@ import { DashComponent } from './dash/dash.component';
     AdmindashboardComponent,
     SidebarComponent,
     DashComponent,
+
     
   ],
   imports: [
@@ -57,6 +58,7 @@ import { DashComponent } from './dash/dash.component';
     AngularFireStorageModule,
     NgxPaginationModule,
     NgxPayPalModule,
+    
     
     
   ],
